@@ -26,7 +26,7 @@
 					"name": "Select1"
 				}
 			],
-			"script": "\n\nsource(output(\n\t\tfname as string,\n\t\tlname as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100) ~> sourcecsv\nsourcecsv select(skipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nSelect1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> sink1"
+			"script": "\n\nsource(output(\n\t\tfname as string,\n\t\tlname as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100) ~> sourcecsv\nsourcecsv select(skipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nsourcecsv sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> sink1"
 		}
 	}
 }
