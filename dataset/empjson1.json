@@ -1,0 +1,19 @@
+{
+	"name": "empjson1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "outputpath",
+				"container": "adftutorial"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

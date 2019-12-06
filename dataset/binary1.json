@@ -1,0 +1,20 @@
+{
+	"name": "binary1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "emp.txt",
+				"folderPath": "input",
+				"container": "adftutorial"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
