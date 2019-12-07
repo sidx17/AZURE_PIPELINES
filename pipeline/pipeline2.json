@@ -78,7 +78,7 @@
 					"source": {
 						"type": "MySqlSource",
 						"query": {
-							"value": "select * from @{pipeline().parameters.Data_Source_Table_Name} where @{pipeline().parameters.Data_Source_WaterMarkColumn} > '@{activity('LookupLastWaterMark').output.firstRow.WatermarkValue}' and @{pipeline().parameters.Data_Source_WaterMarkColumn} <= '@{activity('LookupCurrentWaterMark').output.firstRow.NewWatermarkValue}'",
+							"value": "select * from @{pipeline().parameters.Data_Source_Table_Name} where @{pipeline().parameters.Data_Source_WaterMarkColumn} > '@{activity('LookupLastWaterMark').output.firstRow.WatermarkValue}' and @{pipeline().parameters.Data_Source_WaterMarkColumn} <= '@{activity('LookupCurrentWaterMark').output.firstRow.ts}'",
 							"type": "Expression"
 						}
 					},
@@ -130,10 +130,10 @@
 					"storedProcedureParameters": {
 						"LastModifyDate": {
 							"value": {
-								"value": "@activity('LookupCurrentWaterMark').output.firstRow.NewWatermarkValue",
+								"value": "@activity('LookupCurrentWaterMark').output.firstRow.ts",
 								"type": "Expression"
 							},
-							"type": "datetime"
+							"type": "Decimal"
 						}
 					}
 				},
