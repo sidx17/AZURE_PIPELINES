@@ -1,0 +1,31 @@
+{
+	"name": "AzureBlobStorageDataDestination1",
+	"properties": {
+		"description": "Connection to your destination data store.",
+		"linkedServiceName": {
+			"referenceName": "siddata",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FolderPath": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlob",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"treatEmptyAsNull": true
+			},
+			"fileName": {
+				"value": "@CONCAT('DeltaCopyfromDB_using_ControlTable-', pipeline().RunId, '.txt')",
+				"type": "Expression"
+			},
+			"folderPath": {
+				"value": "@dataset().FolderPath",
+				"type": "Expression"
+			}
+		}
+	}
+}

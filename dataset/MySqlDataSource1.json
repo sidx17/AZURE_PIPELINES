@@ -1,0 +1,15 @@
+{
+	"name": "MySqlDataSource1",
+	"properties": {
+		"description": "Connection to your source data store.",
+		"linkedServiceName": {
+			"referenceName": "siboonsource",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"typeProperties": {
+			"tableName": "DataSourceTable"
+		}
+	}
+}

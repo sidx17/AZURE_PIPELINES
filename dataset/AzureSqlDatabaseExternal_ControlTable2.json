@@ -1,0 +1,15 @@
+{
+	"name": "AzureSqlDatabaseExternal_ControlTable2",
+	"properties": {
+		"description": "External control table to store high water mark value.",
+		"linkedServiceName": {
+			"referenceName": "charControl",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": "watermarktable"
+		}
+	}
+}
