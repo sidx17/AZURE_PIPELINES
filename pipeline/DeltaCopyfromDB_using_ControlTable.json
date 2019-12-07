@@ -16,7 +16,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "SqlSource"
+						"type": "SqlSource",
+						"sqlReaderQuery": {
+							"value": "select @{pipeline().parameters.Control_Table_Column_Name} as WatermarkValue from @{pipeline().parameters.Control_Table_Table_Name}",
+							"type": "Expression"
+						}
 					},
 					"dataset": {
 						"referenceName": "AzureSqlDatabaseExternal_ControlTable2",
@@ -122,6 +126,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"storedProcedureName": "[dbo].[update_watermark]",
 					"storedProcedureParameters": {
 						"LastModifyDate": {
 							"value": {
